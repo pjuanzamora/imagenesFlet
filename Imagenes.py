@@ -11,16 +11,20 @@ def main(page: ft.Page):
 
     def dropdown_changed(e):
         if (dd.value == "Fresa"):
-            nombreFruta = "fresa.jpeg"
+            nombreFruta = "imagenes/fresa.jpeg"
             print(f"fresa al poder {nombreFruta}")
         elif (dd.value == "Platano"):
-            nombreFruta = "platano.jpeg"
+            nombreFruta = "imagenes/platano.jpeg"
             print("platano al poder")
         else:
             nombreFruta = "https://loremflickr.com/640/360"
             print("gatito al poder")
 
+
+        img.src=f"{nombreFruta}"
         page.update()
+
+        
 
     dd = ft.Dropdown(
         width=100,
@@ -35,14 +39,14 @@ def main(page: ft.Page):
     page.add(dd)
 
     
-
     img = ft.Image(
-        src=f"imagenes/{nombreFruta}"
-        #width=20,
-        #height=30
-    )
+            src=f"imagenes/{nombreFruta}"
+            #width=20,
+            #height=30
+        )
 
     page.add(img)
+   
     
 '''
     img2 = ft.Image(
